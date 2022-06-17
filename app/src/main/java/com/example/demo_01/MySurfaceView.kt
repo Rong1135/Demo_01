@@ -1,11 +1,9 @@
 package com.example.demo_01
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.Rect
+import android.graphics.*
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 
@@ -29,6 +27,13 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
     private var count3: Int = 0
     private var time: Int = 0
 
+    /* 觸控遊戲屬性 */
+    private var Player: Bitmap
+    private var PlayerX: Float = 0f
+    private var PlayerY: Float = 0f
+    private var Score: Int = 0          // 成績
+    private var Shooting: Int = 0       // 消失時間
+
     init {
         surfaceHolder = getHolder()
         BG = BitmapFactory.decodeResource(getResources(), R.drawable.ground)
@@ -36,6 +41,8 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
         mouse2 = BitmapFactory.decodeResource(getResources(), R.drawable.m3)
         mouse3 = BitmapFactory.decodeResource(getResources(), R.drawable.m8)
         surfaceHolder.addCallback(this)
+
+        Player = BitmapFactory.decodeResource(getResources(), R.drawable.hammer)
     }
 
     override fun surfaceCreated(p0: SurfaceHolder) {
@@ -55,6 +62,10 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
     fun drawSomething(canvas: Canvas) {
         /* 背景圖 */
         canvas.drawBitmap(BG, 0f, 0f, null)
+
+        /* 觸控偵測 */
+        if(Shooting > 0)
+            Shooting--
 
         /* m1 地鼠隨機出現 --- 開始 */
         val srcRect1 = Rect(0, 0, mouse1.width, mouse1.height)
@@ -226,9 +237,46 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
             val destRect3 = Rect(xPos3, yPos3, w3+xPos3, h3+yPos3)
             canvas.drawBitmap(mouse3, srcRect3, destRect3, null)
         }
-
         /* m8 地鼠隨機出現 --- 結束 */
 
+        /* 繪製槌子 */
+        canvas.drawBitmap(Player, PlayerX, PlayerY, null)
+
+        // 繪製得分文字
+        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        paint.color = Color.BLACK
+        paint.textSize = 45f
+        canvas.drawText("得分:"+Score.toString(), 600f,72f, paint)
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        PlayerX = event!!.x
+        PlayerY = event.y
+
+        val w1:Int = mouse1.width / 6
+        val h1:Int = mouse1.height / 6
+        val w2:Int = mouse2.width / 6
+        val h2:Int = mouse2.height / 6
+        val w3:Int = mouse3.width / 6
+        val h3:Int = mouse3.height / 6
+
+        if((PlayerX >= xPos1) && (PlayerX <= xPos1+w1) && (PlayerY >= yPos1) && (PlayerY <= yPos1+h1)) {
+            Score += 10
+            Shooting = 0
+        }
+        else if((PlayerX >= xPos2) && (PlayerX <= xPos2+w2) && (PlayerY >= yPos2) && (PlayerY <= yPos2+h2)) {
+            Score += 50
+            Shooting = 0
+        }
+        else if((PlayerX >= xPos3) && (PlayerX <= xPos3+w3) && (PlayerY >= yPos3) && (PlayerY <= yPos3+h3)) {
+            Score -= 20
+            Shooting = 0
+        }
+
+        PlayerX -= Player.width / 2
+        PlayerY -= Player.height / 2
+
+        return false
     }
 
 }
