@@ -1,5 +1,6 @@
 package com.example.demo_01
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -19,10 +20,11 @@ class MainActivity : AppCompatActivity() {
         start = findViewById(R.id.start)
         history = findViewById(R.id.history)
 
-//        start.setOnClickListener({
-//
-//        })
-//
+        start.setOnClickListener({
+            var intent1 = Intent(this, GameStart_Activity::class.java)
+            startActivity(intent1)
+        })
+
 //        history.setOnClickListener({
 //
 //        })
