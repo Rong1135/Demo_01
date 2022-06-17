@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".GameStart_Activity">
 
+    <com.example.demo_01.MySurfaceView
+        android:id="@+id/mysv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <TextView
         android:id="@+id/txv"
         android:layout_width="wrap_content"

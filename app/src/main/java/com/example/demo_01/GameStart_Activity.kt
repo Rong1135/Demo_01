@@ -7,8 +7,8 @@ import kotlinx.coroutines.*
 
 class GameStart_Activity : AppCompatActivity() {
 
-    lateinit var txv: TextView
-    lateinit var job: Job
+    private lateinit var txv: TextView
+    private lateinit var job: Job
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
