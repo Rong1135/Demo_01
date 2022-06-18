@@ -3,4 +3,5 @@
     <string name="time">剩餘時間：30</string>
     <string name="time_end">剩餘時間：0</string>
     <string name="back">Back</string>
+    <string name="score">得分：0</string>
 </resources>

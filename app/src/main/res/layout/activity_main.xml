@@ -21,29 +21,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.041" />
 
-    <ImageView
-        android:id="@+id/history"
-        android:layout_width="206dp"
-        android:layout_height="72dp"
+    <TextView
+        android:id="@+id/txv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752"
-        app:srcCompat="@drawable/history" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <ImageView
         android:id="@+id/start"
-        android:layout_width="229dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="132dp"
-        app:layout_constraintBottom_toTopOf="@+id/history"
+        android:layout_width="247dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568"
+        app:layout_constraintVertical_bias="0.606"
         app:srcCompat="@drawable/start" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

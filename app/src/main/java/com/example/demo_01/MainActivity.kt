@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var txv: TextView
     private lateinit var start: ImageView
-    private lateinit var history: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,16 +17,11 @@ class MainActivity : AppCompatActivity() {
 
         txv = findViewById(R.id.txv)
         start = findViewById(R.id.start)
-        history = findViewById(R.id.history)
 
         start.setOnClickListener({
-            var intent1 = Intent(this, GameStart_Activity::class.java)
+            val intent1 = Intent(this, GameStart_Activity::class.java)
             startActivity(intent1)
         })
-
-//        history.setOnClickListener({
-//
-//        })
 
     }
 }

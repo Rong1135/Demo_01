@@ -31,7 +31,7 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
     private var Player: Bitmap
     private var PlayerX: Float = 0f
     private var PlayerY: Float = 0f
-    private var Score: Int = 0          // 成績
+    var Score: Int = 0          // 成績
     private var Shooting: Int = 0       // 消失時間
 
     init {
@@ -135,44 +135,44 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
         if(time % 5 == 0) {     // 間隔時間長一點才出現
             when (count2) {
                 0 -> {
-                    xPos2 = 1080
-                    yPos2 = 380
+                    xPos2 = 1060
+                    yPos2 = 360
                 }
                 1 -> {
-                    xPos2 = 70
-                    yPos2 = 350
+                    xPos2 = 60
+                    yPos2 = 330
                 }
                 2 -> {
-                    xPos2 = 40
-                    yPos2 = 140
+                    xPos2 = 30
+                    yPos2 = 130
                 }
                 3 -> {
-                    xPos2 = 880
-                    yPos2 = 280
+                    xPos2 = 850
+                    yPos2 = 260
                 }
                 4 -> {
-                    xPos2 = 1020
-                    yPos2 = 140
+                    xPos2 = 1000
+                    yPos2 = 120
                 }
                 5 -> {
-                    xPos2 = 500
-                    yPos2 = 280
+                    xPos2 = 485
+                    yPos2 = 260
                 }
                 6 -> {
-                    xPos2 = 660
-                    yPos2 = 400
+                    xPos2 = 650
+                    yPos2 = 380
                 }
                 7 -> {
-                    xPos2 = 360
-                    yPos2 = 140
+                    xPos2 = 340
+                    yPos2 = 130
                 }
                 8 -> {
-                    xPos2 = 370
-                    yPos2 = 400
+                    xPos2 = 350
+                    yPos2 = 380
                 }
                 9 -> {
-                    xPos2 = 660
-                    yPos2 = 120
+                    xPos2 = 645
+                    yPos2 = 105
                 }
             }
 
@@ -193,44 +193,44 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?): SurfaceView(contex
         if(time % 3 == 0) {
             when (count3) {
                 0 -> {
-                    xPos3 = 1080
-                    yPos3 = 380
+                    xPos3 = 1035
+                    yPos3 = 355
                 }
                 1 -> {
-                    xPos3 = 70
-                    yPos3 = 350
+                    xPos3 = 30
+                    yPos3 = 330
                 }
                 2 -> {
-                    xPos3 = 40
-                    yPos3 = 140
+                    xPos3 = 5
+                    yPos3 = 122
                 }
                 3 -> {
-                    xPos3 = 880
-                    yPos3 = 280
+                    xPos3 = 840
+                    yPos3 = 250
                 }
                 4 -> {
-                    xPos3 = 1020
-                    yPos3 = 140
+                    xPos3 = 970
+                    yPos3 = 110
                 }
                 5 -> {
-                    xPos3 = 500
-                    yPos3 = 280
+                    xPos3 = 455
+                    yPos3 = 250
                 }
                 6 -> {
-                    xPos3 = 660
-                    yPos3 = 400
+                    xPos3 = 610
+                    yPos3 = 380
                 }
                 7 -> {
-                    xPos3 = 360
-                    yPos3 = 140
+                    xPos3 = 310
+                    yPos3 = 130
                 }
                 8 -> {
-                    xPos3 = 370
-                    yPos3 = 400
+                    xPos3 = 320
+                    yPos3 = 375
                 }
                 9 -> {
-                    xPos3 = 660
-                    yPos3 = 120
+                    xPos3 = 620
+                    yPos3 = 105
                 }
             }
 
