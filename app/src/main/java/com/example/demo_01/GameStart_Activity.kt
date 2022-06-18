@@ -1,5 +1,6 @@
 package com.example.demo_01
 
+import android.content.Intent
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,8 @@ class GameStart_Activity : AppCompatActivity() {
         txv = findViewById(R.id.txv)
         mySurfaceView = findViewById(R.id.mysv)
 
+        var intent = Intent(this, GameEnd_Activity::class.java)
+
         // coroutine 倒數
         job = GlobalScope.launch(Dispatchers.Main) {
             for(i in 30 downTo 1) {
@@ -28,9 +31,13 @@ class GameStart_Activity : AppCompatActivity() {
                 val canvas: Canvas = mySurfaceView.holder.lockCanvas()
                     mySurfaceView.drawSomething(canvas)
                 mySurfaceView.holder.unlockCanvasAndPost(canvas)
+
+                if(i == 1)
+                    startActivity(intent)
             }
             finish()
         }
 
     }
+
 }

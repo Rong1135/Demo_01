@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Demo_01">
         <activity
-            android:name=".GameStart_Activity"
+            android:name=".GameEnd_Activity"
             android:screenOrientation="landscape"
             android:exported="false" />
+        <activity
+            android:name=".GameStart_Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
